@@ -1,0 +1,29 @@
+{
+  "name": "command-events-handler",
+  "version": "1.0.0",
+  "description": "A commands and events handler for discord.js v14 bot made in typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsx watch src/test.ts",
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "app": "nodemon"
+  },
+  "author": "ARKA ROY",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "colors": "^1.4.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "mongoose": "^7.6.9",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
