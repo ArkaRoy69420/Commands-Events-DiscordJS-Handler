@@ -5,16 +5,30 @@ interface Choice {
     value: any;
 }
 interface Option {
-    name: string;
-    description: string;
-    required: boolean;
-    type: ApplicationCommandOptionType.Attachment | ApplicationCommandOptionType.Boolean | ApplicationCommandOptionType.Channel | ApplicationCommandOptionType.Integer | ApplicationCommandOptionType.Mentionable | ApplicationCommandOptionType.Number;
-    choices: Choice[]
+  name: string;
+  description: string;
+  required: boolean;
+  type:
+  | ApplicationCommandOptionType.Attachment
+  | ApplicationCommandOptionType.Boolean
+  | ApplicationCommandOptionType.Channel
+  | ApplicationCommandOptionType.Integer
+  | ApplicationCommandOptionType.Mentionable
+  | ApplicationCommandOptionType.Number
+  | ApplicationCommandOptionType.String
+  | ApplicationCommandOptionType.User
+  | ApplicationCommandOptionType.Role
+  | ApplicationCommandOptionType.Subcommand
+  | ApplicationCommandOptionType.SubcommandGroup
+  | ApplicationCommandOptionType.Attachment;
+  choices?: Choice[];
 }
+
+
 interface CommandObjectConstructorParams {
     name: string;
     description: string;
-    options?: any;
+    options?: Option[];
     forDevOnly?: boolean;
     forTestGuildOnly?: boolean;
     dm_permissions?: boolean;
