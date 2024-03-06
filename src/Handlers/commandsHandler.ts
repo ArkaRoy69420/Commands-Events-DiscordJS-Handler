@@ -122,14 +122,14 @@ export default class CommandsHandler {
 
 
 
-        if (commandObject.forDevOnly === true && devsId.includes(interaction.user.id)) {    
+        if (commandObject.forDevOnly === true && !devsId.includes(interaction.user.id)) {    
             let devOnlyEmbed = new EmbedBuilder()
             .setTitle("Nah")
             .setDescription("Nah my human, this command ain't made for 'ta.\nThis command is meant for developers.")
             .setFooter({ text: `Blud really thinks they can use devOnly command` })
             .setColor("DarkRed");
     
-            await interaction.editReply({ embeds: [devOnlyEmbed] });
+            await interaction.reply({ embeds: [devOnlyEmbed] });
             return;
         }
 
