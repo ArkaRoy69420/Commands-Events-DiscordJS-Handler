@@ -152,7 +152,7 @@ export default class CommandsHandler {
          * So, if user or bot is not in the guild and the command needs specific permissions to run, it'll provide a message
          * It can be removed but that may have consequences
          */
-        if (!interaction.inGuild() && commandObject.botPermissionsRequired?.length === 0) {
+        if (!interaction.inGuild() && commandObject.botPermissionsRequired?.length !== 0) {
             await interaction.reply({
                 embeds: [
                     new EmbedBuilder()
@@ -166,7 +166,7 @@ export default class CommandsHandler {
             return;
         }
 
-        if (!interaction.inGuild() && commandObject.userPermissionsRequired?.length === 0) {
+        if (!interaction.inGuild() && commandObject.userPermissionsRequired?.length !== 0) {
             await interaction.reply({
                 embeds: [
                     new EmbedBuilder()
